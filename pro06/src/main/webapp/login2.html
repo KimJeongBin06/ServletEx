@@ -1,0 +1,40 @@
+<!-- 
+request로 클라이언트의 자료를 서버에 전달
+	getParameter
+	getParameterName
+	getParameterValue
+	
+response는 서버에서 클라이언트로 값을 전달
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 서버에 변수와 값을 전달하는 폼 -->
+<!-- 
+	name 웹페이지에서 위치를 찾기위한 Form의 이름(CSS, Script)
+	action 자바단에서 사용할 @WebServlet("") 접속명
+	method 전달하는 방식(get, post)
+	encType 전달시 문자형
+	form내에는 input태그로 구성
+	input type : 입력종류(text, password, email, phone.....)
+		  name : 변수명
+		  value: 값(초기값, 전달받은 결과값)
+		  type중에서 특별한 기능 submit(폼 내용을 서버전달), reset(폼 초기화)
+ -->
+<form name = "frmlogin" method = "get" action="login2"
+encType="UTF-8">
+아이디 	: <input type="text" name="user_id"><br>
+비밀번호	: <input type="password" name="user_pw"><br>
+<input type="submit" value="로그인">
+<input type="reset" value="새로입력">
+<!--  
+							action  input  name=값,.....
+http://localhost:8080/pro06/login?user_id=g&user_pw=sgf
+ -->
+</form>
+</body>
+</html>
