@@ -1,0 +1,29 @@
+<!-- 
+request로 클라이언트의 자료를 서버에 전달
+	getParameter
+	getParameterName
+	getParameterValue
+	
+response는 서버에서 클라이언트로 값을 전달
+ -->
+<!DOCTYPE html>
+<html>
+<head> <!-- 문자셋, CSS, JAVAScript, Ajak -->
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body> <!-- 본문내용 -->
+<!-- method get=>doGet, post=>doPost, action=@WebServlet 연결(맵핑)-->
+<form name = "frmlogin" method = "get" action="login3"
+encType="UTF-8"> <!-- scanner 입력창, JLabel, JTextfield(문자열입력창), JButton -->
+아이디 : <input type="text" name="user_id"><br>
+비밀번호	: <input type="password" name="user_pw"><br>
+<input type="submit" value="로그인">
+<input type="reset" value="새로입력">
+<!--  
+							action  input  name=값,.....
+http://localhost:8080/pro06/login?user_id=g&user_pw=sgf
+ -->
+</form>
+</body>
+</html>

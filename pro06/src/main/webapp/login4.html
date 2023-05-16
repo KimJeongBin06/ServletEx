@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head> <!-- 문자셋, CSS, JAVAScript, Ajak -->
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 상단에 스크립트 구성(사용자가 구성한 스크립트) -->
+<script type="text/javascript"> <!-- 선언 -->
+	//function 메소드명(인수...) { }
+	//int, float, String 데이터형을 추상적 데이터형 var 값에 따라서 데이터형이 자동 변환
+	//DOM(document)
+	function fn_validate() {
+		//변수 선언
+		//해당위치 찾기
+		//스크립트에서는 user_id, user_pw 2개의 변수만 사용
+		var formLogin = document.frmlogin; 	  //document(html 중에서).formlogin(name)
+		var user_id = frmlogin.user_id.value; //frmlogin(태그)에 user_id(name)에 값
+		var user_pw = frmlogin.user_pw.value;
+		//유효성 검사(개발자가 의도한 값인지 확인)
+		//사용자 아이디가 null이거나 없으면 비밀번호가 null이거나 없으면 이중 하나라도 맞으면
+		if((user_id.length==0 || user_id=="") || (user_pw.length==0 || user_pw=="")){
+			alert("아이디와 비밀번호는 필수입니다."); //알림창, JOptionPane MessageBox
+		} else { //정상적으로 입력을 하였다면
+			frmlogin.method="post";  //form에 method를 post로 설정
+			frmlogin.action="login4";//연결할 맵핑 login4로 설정
+			frmlogin.submit(); 	     //서버에 요청(form내에 모든 변수가 전달)
+		}
+	}
+	
+</script>
+</head>
+<body> <!-- 본문내용 -->
+<!-- form이나 다른태그에 name=>css나 script에 사용하기 위해 -->
+<!-- user_id, user_pw, user_address -->
+<form name = "frmlogin" method = "get" action="login4"
+encType="UTF-8"> <!-- scanner 입력창, JLabel, JTextfield(문자열입력창), JButton -->
+아이디 : <input type="text" name="user_id"><br>
+비밀번호	: <input type="password" name="user_pw"><br>
+<!-- 로그인 버튼을 클랙했을 때 fn_validate()메소드를 실행 -->
+<input type="button" onclick="fn_validate()" value="로그인">
+<input type="submit" value="전송">
+<input type="reset" value="다시 입력">
+<!-- 사용자 이름, 구분값(수정,삽입) -->
+<input type="hidden" name="user_address" value="서울시 성북구" />
+<!--  
+							action  input  name=값,.....
+http://localhost:8080/pro06/login?user_id=g&user_pw=sgf
+ -->
+</form>
+
+<!-- 하단에 스크립트 구성 -->
+
+</body>
+</html>
